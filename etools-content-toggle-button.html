@@ -1,0 +1,98 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+
+<!--
+`etools-content-toggle-button`
+
+Toggle button with icon used to show or hide different content, for example an iron-collapse element.
+Check demo page or readme file.
+
+### Styling
+
+You can use defined variables to button style.
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--etools-content-toggle-btn-color` | Element text color | `#4a90e2`
+`--etools-content-toggle-btn-icon-color` | Icon color | `#9b9b9b`
+`--etools-content-toggle-btn-font-size` | Element text font size | `14px`
+`--etools-content-toggle-btn-disabled-color` | Disabled element color | `#9b9b9b`
+
+
+@demo demo/index.html 
+-->
+
+<dom-module id="etools-content-toggle-button">
+  <template>
+    <style>
+      :host {
+        color: var(--etools-content-toggle-btn-color, #4a90e2);
+        cursor: pointer;
+      }
+      iron-icon {
+        color: var(--etools-content-toggle-btn-icon-color, #9b9b9b);
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+        font-size: var(--etools-content-toggle-btn-font-size, 14px);
+      }
+      span.disabled {
+        color: var(--etools-content-toggle-btn-disabled-color, #d1d1d1);
+        cursor: not-allowed;
+      }
+      span.disabled iron-icon {
+        color: var(--etools-content-toggle-btn-disabled-color, #d1d1d1);
+      }
+    </style>
+    <span class$="[[disabledClass]]" on-tap="_toggleContent">
+      <iron-icon id="expandIcon" icon="{{_icon}}"></iron-icon>
+      [[label]]
+    </span>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'etools-content-toggle-button',
+        properties: {
+          active: {
+            type: Boolean,
+            value: false,
+            notify: true
+          },
+          _icon: {
+            type: String,
+            value: 'expand-more',
+            reflectToAttribute: true
+          },
+          isDisabled: {
+            type: Boolean,
+            value: false,
+            observer: '_updateDisabledClass'
+          }
+        },
+        _toggleContent: function() {
+          if (this.isDisabled) {
+            return false;
+          }
+          this.active = !this.active;
+          this._icon = this.active ? 'expand-less' : 'expand-more';
+        },
+        _updateDisabledClass: function() {
+          if (this.isDisabled === true) {
+            this.disabledClass = 'disabled';
+            if (this.active === true) {
+              this.active = false;
+              this._icon = 'expand-more';
+            }
+          } else {
+            this.disabledClass = '';
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>

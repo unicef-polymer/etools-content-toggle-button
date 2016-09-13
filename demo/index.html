@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>etools-content-toggle-button demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-collapse/iron-collapse.html">
+
+    <link rel="import" href="../etools-content-toggle-button.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      .vertical-section-container {
+        max-width: 900px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <h1>etools-content-toggle-button demo</h1>
+      <p>Default:</p>
+      <demo-snippet>
+        <template is="dom-bind">
+          <etools-content-toggle-button label="Toggle content" active="{{opened}}"></etools-content-toggle-button>
+
+          <iron-collapse opened="[[opened]]">
+            Some collapsible content...
+          </iron-collapse>
+        </template>
+      </demo-snippet>
+
+      <p>Disabled state:</p>
+      <demo-snippet>
+        <template is="dom-bind">
+          <etools-content-toggle-button label="Toggle content" active="{{opened}}" is-disabled="true"></etools-content-toggle-button>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>
