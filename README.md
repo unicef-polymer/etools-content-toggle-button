@@ -27,6 +27,7 @@ Custom property | Description | Default
 `--etools-content-toggle-btn-icon-color` | Icon color | `#9b9b9b`
 `--etools-content-toggle-btn-font-size` | Element text font size | `14px`
 `--etools-content-toggle-btn-disabled-color` | Disabled element color | `#9b9b9b`
+`--etools-content-toggle-btn` | Mixin applied to button | '{}'
 
 ## Install
 ```bash

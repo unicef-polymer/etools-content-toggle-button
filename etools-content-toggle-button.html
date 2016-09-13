@@ -17,6 +17,7 @@ Custom property | Description | Default
 `--etools-content-toggle-btn-icon-color` | Icon color | `#9b9b9b`
 `--etools-content-toggle-btn-font-size` | Element text font size | `14px`
 `--etools-content-toggle-btn-disabled-color` | Disabled element color | `#9b9b9b`
+`--etools-content-toggle-btn` | Mixin applied to button | '{}'
 
 
 @demo demo/index.html 
@@ -36,6 +37,7 @@ Custom property | Description | Default
         display: inline-block;
         width: 100%;
         font-size: var(--etools-content-toggle-btn-font-size, 14px);
+        @apply(--etools-content-toggle-btn);
       }
       span.disabled {
         color: var(--etools-content-toggle-btn-disabled-color, #d1d1d1);
