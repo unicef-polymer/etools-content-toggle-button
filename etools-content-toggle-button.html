@@ -20,7 +20,7 @@ Custom property | Description | Default
 `--etools-content-toggle-btn` | Mixin applied to button | `{}`
 
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="etools-content-toggle-button">
@@ -74,7 +74,8 @@ Custom property | Description | Default
             type: Boolean,
             value: false,
             observer: '_updateDisabledClass'
-          }
+          },
+          label: String
         },
         _toggleContent: function() {
           if (this.isDisabled) {
