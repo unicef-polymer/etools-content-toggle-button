@@ -1,7 +1,7 @@
 {
   "name": "etools-content-toggle-button",
   "description": "Toggle button with icon used to show or hide different content, for example an iron-collapse element.",
-  "version": 1.0,
+  "version": "1.0.1",
   "license": "https://github.com/unicef-polymer/etools-content-toggle-button/blob/master/LICENSE.md",
   "main": "etools-content-toggle-button.html",
   "dependencies": {
