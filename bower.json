@@ -13,6 +13,7 @@
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "web-component-tester": "^4.0.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-    "iron-collapse": "PolymerElements/iron-collapse#^1.2.1"
+    "iron-collapse": "PolymerElements/iron-collapse#^1.2.1",
+    "iron-test-helpers": "^2.0.0"
   }
 }

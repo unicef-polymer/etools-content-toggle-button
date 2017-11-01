@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
+    <link rel="import" href="../../iron-test-helpers/mock-interactions.html">
+
+    </script>
 
     <link rel="import" href="../etools-content-toggle-button.html">
   </head>
@@ -20,12 +23,27 @@
 
     <script>
       suite('etools-content-toggle-button', function() {
-
+        var basic
+        setup(function() {
+          basic = fixture('basic')
+        })
         test('instantiating the element works', function() {
-          var element = fixture('basic');
-          assert.equal(element.is, 'etools-content-toggle-button');
+          assert.equal(basic.is, 'etools-content-toggle-button');
         });
-
+        test('tapping an enabled toggle button reveals the content', function() {
+          assert.equal(basic.active, false)
+          MockInteractions.tap(basic.children[0])
+          assert.equal(basic.active, true)
+        });
+        test('passing is-disabled property disables toggle option', function() {
+          MockInteractions.tap(basic.children[0])
+          assert.equal(basic.active, true)
+          MockInteractions.tap(basic.children[0])
+          assert.equal(basic.active, false)
+          basic.isDisabled = true
+          MockInteractions.tap(basic.children[0])
+          assert.equal(basic.active, false)
+        });
       });
     </script>
   </body>
