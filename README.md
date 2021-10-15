@@ -1,4 +1,4 @@
-# \<etools-content-toggle-button\>
+# \<etools-content-toggle-button\> #DEPRECATED
 
 Toggle button with icon used to show or hide different content, for example an iron-collapse element.
 
